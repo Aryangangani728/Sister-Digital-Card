@@ -1,0 +1,108 @@
+/* General Reset and Body Styling */
+body {
+    background-color: #121212; /* Dark background color */
+    color: #f0f0f0; /* Light text color */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* App Container (The Phone Screen Area) */
+#app-container {
+    width: 100%;
+    max-width: 400px; 
+    height: 80vh; 
+    background-color: #212121; 
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Page Styling (The Digital Card) */
+.app-page {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* WHITE CARD background */
+    color: #333; 
+    padding: 30px;
+    box-sizing: border-box;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Utility Classes for Hiding/Showing Pages */
+.hidden {
+    opacity: 0;
+    pointer-events: none; 
+    z-index: 1; 
+}
+
+.active {
+    opacity: 1;
+    z-index: 10; 
+}
+
+/* Styling for the Next Button */
+.next-button {
+    background-color: #f77f7f; 
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-end; 
+    box-shadow: 0 4px 10px rgba(247, 127, 127, 0.4);
+}
+
+.next-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Styling for the Chocolate Hunt Tiles */
+.hunt-tile {
+    height: 70px;
+    background-color: #f77f7f; 
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: white; 
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hunt-tile:hover {
+    opacity: 0.8;
+}
+
+/* Styles for Clicked Tiles */
+.found-chocolate {
+    background-color: #4CAF50; /* Green color when chocolate is found */
+    color: white; 
+}
+.empty-tile {
+    background-color: #ccc; /* Grey color when it's an empty spot */
+    color: #333;
+    font-size: 1.5em;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Sister | A Special Gift</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app-container">
+        
+        <section id="page-welcome" class="app-page active">
+            <div>
+                <h2 style="color: #F77F7F; margin-bottom: 5px;">FOR MY LOVELY</h2>
+                <h1 style="font-size: 2.5em; margin-top: 0; color: #333;">SISTER ❤️</h1>
+                <p><strong>Dear Sis,</strong></p>
+                <p>You've always been my biggest supporter, my secret keeper, and my partner-in-crime. You are more than just a sister; you are my best friend. Thanks for sharing the best parts of my life with me.</p>
+                <p>I just want to remind you how special you are to me. May your life shine as bright as your smile.</p>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <img src="YOUR_PUBLIC_URL_FOR_DOWNLOAD_1_PNG_HERE" alt="Cartoon image with funny text" style="width: 70%; max-width: 220px; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+            
+            <button class="next-button" onclick="nextPage('page-welcome', 'page-game')">
+                Tap to Unlock Your Gift!
+            </button>
+        </section>
+
+        <section id="page-game" class="app-page hidden">
+            <div>
+                <h2 style="color: #F77F7F; text-align: center;">CHOCOLATE HUNT!</h2>
+                <p style="text-align: center; margin-bottom: 20px;">
+                    Tap the tiles to find the **3 hidden chocolates** 🍫 to continue!
+                </p>
+                
+                <div id="chocolate-hunt-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 10px; max-width: 300px; margin: 0 auto;">
+                    <div class="hunt-tile" data-index="0">❌</div>
+                    <div class="hunt-tile" data-index="1">❌</div>
+                    <div class="hunt-tile" data-index="2">❌</div>
+                    <div class="hunt-tile" data-index="3">❌</div>
+                    <div class="hunt-tile" data-index="4">❌</div>
+                    <div class="hunt-tile" data-index="5">❌</div>
+                    <div class="hunt-tile" data-index="6">❌</div>
+                    <div class="hunt-tile" data-index="7">❌</div>
+                    <div class="hunt-tile" data-index="8">❌</div>
+                </div>
+                
+                <div id="success-message" style="text-align: center; margin-top: 30px; display: none;">
+                    <h3 style="color: green;">
+                        🥳 You successfully unlocked a 🍫 CHOCOLATE TREAT 🎁
+                    </h3>
+                </div>
+            </div>
+            
+            <button id="game-next-button" class="next-button" disabled onclick="nextPage('page-game', 'page-memories')">
+                Continue
+            </button>
+        </section>
+
+        <section id="page-memories" class="app-page hidden">
+            <div style="text-align: center;">
+                <h2 style="color: #F77F7F; margin-bottom: 5px;">Our Precious Memories</h2>
+                <p style="color: #666; font-style: italic; margin-bottom: 25px;">
+                    "A memory is a way of holding onto the things you love."
+                </p>
+
+                <div style="background-color: #f0f0f0; border-radius: 10px; padding: 20px; box-shadow: inset 0 0 10px rgba(0,0,0,0.05);">
+                    <div style="border: 2px dashed #ccc; padding: 5px; border-radius: 8px;">
+                        <img src="YOUR_PUBLIC_URL_FOR_PERSONAL_PHOTO_HERE" alt="A cherished memory photo" style="width: 100%; border-radius: 5px; display: block;">
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #555;">
+                        **Bhai-Didi Moment:** Remember that time we tried to bake and set off the smoke alarm? We cleaned it up before anyone noticed! Forever partners in crime.
+                    </p>
+                </div>
+            </div>
+            
+            <button class="next-button" onclick="nextPage('page-memories', 'page-music')">
+                Tap for a Song Dedication!
+            </button>
+        </section>
+
+        <section id="page-music" class="app-page hidden">
+            <div style="text-align: center;">
+                <h2 style="color: #F77F7F; margin-bottom: 5px;">A Few Songs For You</h2>
+                
+                <div style="margin: 20px 0;">
+                    <img src="YOUR_PUBLIC_URL_FOR_DOWNLOAD_JPEG_HERE" alt="Shinchan character with chocolate" style="width: 50%; max-width: 150px; height: auto; border-radius: 10px;">
+                </div>
+
+                <div style="border: 1px solid #eee; padding: 20px; border-radius: 12px; background-color: #fcfcfc;">
+                    <p style="color: #aaa; margin-bottom: 10px;">NOW PLAYING</p>
+                    
+                    <h3 id="current-song-title" style="margin: 0; color: #333;">Pal Pal Har Pal</h3>
+                    <p id="current-song-artist" style="color: #999; font-size: 0.9em; margin-top: 5px;">Shreya Ghoshal & Sonu Nigam</p>
+
+                    <label for="song-selector" style="font-size: 0.8em; color: #555; margin-top: 15px; display: block;">Change Song:</label>
+                    <select id="song-selector" onchange="changeSong()" style="padding: 5px; border-radius: 5px; margin-top: 5px; font-size: 1em;">
+                        <option value="palpal">Pal Pal Har Pal (Default)</option>
+                        <option value="tuhi">Tu Hi Meri Shab Hai</option>
+                        <option value="yaadpiya">Yaad Piya Ki Aane Lagi</option>
+                        <option value="dilbaro">Dilbaro</option>
+                    </select>
+
+                    <div style="margin-top: 25px; display: flex; justify-content: center; align-items: center;">
+                        <span style="font-size: 1.5em; color: #F77F7F; margin: 0 15px;">⏮</span>
+                        <button style="background-color: #F77F7F; color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 1.5em; line-height: 1; cursor: pointer;">
+                            ⏸
+                        </button>
+                        <span style="font-size: 1.5em; color: #F77F7F; margin: 0 15px;">⏭</span>
+                    </div>
+                    
+                    <div style="margin-top: 20px;">
+                        <div style="height: 4px; background-color: #eee; border-radius: 2px;">
+                            <div style="width: 60%; height: 4px; background-color: #F77F7F; border-radius: 2px;"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.7em; color: #999; margin-top: 5px;">
+                            <span>0:21</span>
+                            <span>3:45</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <button class="next-button" onclick="nextPage('page-music', 'page-thankyou')">
+                Final Message Awaits!
+            </button>
+        </section>
+
+        <section id="page-thankyou" class="app-page hidden">
+            <div style="text-align: center;">
+                <p style="font-size: 0.9em; color: #666; margin-bottom: 0;">FROM YOUR BHAI, WITH LOVE</p>
+                <h1 style="color: #F77F7F; margin-top: 10px; font-size: 2.5em;">THANK YOU</h1>
+                <h2 style="color: #333; margin-top: 5px; font-size: 1.8em;">FOR ALWAYS BEING THERE</h2>
+                
+                <div style="margin-top: 30px;">
+                    <p style="font-size: 1.1em; line-height: 1.5;">
+                        You make every small thing brighter and happier. I'm lucky to have you — thanks for being the sweetest part of my days.
+                    </p>
+                    <p style="font-style: italic; font-size: 0.9em; margin-top: 30px; color: #999;">
+                        made with ❤️ chocolates & sparkles
+                    </p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; color: #F77F7F; font-weight: bold; font-size: 1.2em;">
+                Love You!
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
